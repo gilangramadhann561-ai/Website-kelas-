@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SMK Gusti Wijaya | X TKJ¹</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#eef2f7;
+    color:#172033;
+}
+
+/* ================= HEADER ================= */
+
+.hero{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:30px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("background.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    animation:masuk 1.2s ease;
+}
+
+.logo{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid white;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:25px;
+    color:#60a5fa;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:17px;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    background:rgba(15,23,42,.96);
+    backdrop-filter:blur(10px);
+}
+
+nav button{
+    border:none;
+    background:none;
+    color:white;
+    padding:16px 18px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav button:hover{
+    background:#2563eb;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.judul{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.judul h2{
+    font-size:30px;
+    color:#1d4ed8;
+}
+
+.judul p{
+    margin-top:8px;
+    color:#64748b;
+}
+
+/* ================= CARD ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.6;
+}
+
+/* ================= STATISTIK ================= */
+
+.statistik{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+}
+
+.stat{
+    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+.stat .angka{
+    font-size:42px;
+    font-weight:bold;
+}
+
+.stat p{
+    margin-top:8px;
+}
+
+/* ================= PENGURUS ================= */
+
+.pengurus{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.orang{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.orang:hover{
+    transform:scale(1.03);
+}
+
+.orang img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.orang-info{
+    padding:18px;
+    text-align:center;
+}
+
+.orang-info h3{
+    color:#2563eb;
+}
+
+.orang-info p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+/* ================= GALERI ================= */
+
+.galeri{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:15px;
+}
+
+.galeri img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.galeri img:hover{
+    transform:scale(1.04);
+}
+
+/* ================= ALAMAT ================= */
+
+.alamat{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    line-height:2;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.alamat h3{
+    color:#2563eb;
+}
+
+/* ================= TOMBOL ================= */
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 22px;
+
+    background:#2563eb;
+    color:white;
+
+    border-radius:30px;
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* ================= MODAL FOTO ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.9);
+
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal img{
+    max-width:95%;
+    max-height:85%;
+    border-radius:15px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+
+    color:white;
+    font-size:40px;
+
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer p{
+    margin:7px;
+}
+
+/* ================= ANIMASI ================= */
+
+@keyframes masuk{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:60vh;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    nav button{
+        padding:12px 9px;
+        font-size:12px;
+    }
+
+    section{
+        padding:50px 15px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <div class="hero-content">
+
+        <!-- GANTI DENGAN LOGO SEKOLAH -->
+        <img src="logo.png"
+        class="logo"
+        alt="Logo Sekolah">
+
+        <h1>SEKOLAH GUSTI WIJAYA</h1>
+
+        <h2>SMK GWS X TKJ¹</h2>
+
+        <p>
+            Website Informasi Kelas X TKJ¹
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<button onclick="scrollKe('tentang')">
+🏫 Tentang
+</button>
+
+<button onclick="scrollKe('struktur')">
+👥 Pengurus
+</button>
+
+<button onclick="scrollKe('siswa')">
+🎓 Siswa
+</button>
+
+<button onclick="scrollKe('guru')">
+👨‍🏫 Guru
+</button>
+
+<button onclick="scrollKe('galeri')">
+📸 Galeri
+</button>
+
+<button onclick="scrollKe('alamat')">
+📍 Alamat
+</button>
+
+</nav>
+
+
+<!-- ================= TENTANG ================= -->
+
+<section id="tentang">
+
+<div class="judul">
+
+<h2>🏫 Tentang Sekolah</h2>
+
+<p>
+Mengenal SMK Gusti Wijaya
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">🏫</div>
+
+<h3>SMK Gusti Wijaya</h3>
+
+<p>
+Selamat datang di website kelas
+X TKJ¹ SMK Gusti Wijaya.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>Jurusan TKJ</h3>
+
+<p>
+Teknik Komputer dan Jaringan
+mempelajari komputer, jaringan,
+internet dan teknologi.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🚀</div>
+
+<h3>Kelas X TKJ¹</h3>
+
+<p>
+Tempat berkumpulnya siswa
+X TKJ¹ untuk belajar dan berkembang
+bersama.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= STATISTIK ================= -->
+
+<section id="siswa">
+
+<div class="judul">
+
+<h2>🎓 Data Siswa</h2>
+
+<p>
+Statistik kelas X TKJ¹
+</p>
+
+</div>
+
+
+<div class="statistik">
+
+<div class="stat">
+
+<div class="angka">30</div>
+
+<p>Total Siswa</p>
+
+</div>
+
+
+<div class="stat">
+
+<div class="angka">20</div>
+
+<p>👦 Siswa Cowok</p>
+
+</div>
+
+
+<div class="stat">
+
+<div class="angka">10</div>
+
+<p>👧 Siswa Cewek</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= STRUKTUR ================= -->
+
+<section id="struktur">
+
+<div class="judul">
+
+<h2>👥 Struktur Kelas</h2>
+
+<p>
+Pengurus X TKJ¹
+</p>
+
+</div>
+
+
+<div class="pengurus">
+
+
+<div class="orang">
+
+<img src="ketua.jpg">
+
+<div class="orang-info">
+
+<h3>Gilang</h3>
+
+<p>Ketua Kelas</p>
+
+</div>
+
+</div>
+
+
+<div class="orang">
+
+<img src="wakil.jpg">
+
+<div class="orang-info">
+
+<h3>ISI NAMA</h3>
+
+<p>Wakil Ketua Kelas</p>
+
+</div>
+
+</div>
+
+
+<div class="orang">
+
+<img src="bendahara.jpg">
+
+<div class="orang-info">
+
+<h3>ISI NAMA</h3>
+
+<p>Bendahara</p>
+
+</div>
+
+</div>
+
+
+<div class="orang">
+
+<img src="wakil-bendahara.jpg">
+
+<div class="orang-info">
+
+<h3>ISI NAMA</h3>
+
+<p>Wakil Bendahara</p>
+
+</div>
+
+</div>
+
+
+<div class="orang">
+
+<img src="sekretaris.jpg">
+
+<div class="orang-info">
+
+<h3>ISI NAMA</h3>
+
+<p>Sekretaris</p>
+
+</div>
+
+</div>
+
+
+<div class="orang">
+
+<img src="wakil-sekretaris.jpg">
+
+<div class="orang-info">
+
+<h3>ISI NAMA</h3>
+
+<p>Wakil Sekretaris</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GURU ================= -->
+
+<section id="guru">
+
+<div class="judul">
+
+<h2>👨‍🏫 Guru</h2>
+
+<p>
+Guru kelas / wali kelas
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">👨‍🏫</div>
+
+<h3>NAMA GURU</h3>
+
+<p>
+Wali Kelas X TKJ¹
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALERI ================= -->
+
+<section id="galeri">
+
+<div class="judul">
+
+<h2>📸 Galeri Foto</h2>
+
+<p>
+Dokumentasi kelas dan sekolah
+</p>
+
+</div>
+
+
+<div class="galeri">
+
+<img src="foto1.jpg"
+onclick="lihatFoto(this.src)">
+
+<img src="foto2.jpg"
+onclick="lihatFoto(this.src)">
+
+<img src="foto3.jpg"
+onclick="lihatFoto(this.src)">
+
+<img src="foto4.jpg"
+onclick="lihatFoto(this.src)">
+
+<img src="foto5.jpg"
+onclick="lihatFoto(this.src)">
+
+<img src="foto6.jpg"
+onclick="lihatFoto(this.src)">
+
+</div>
+
+</section>
+
+
+<!-- ================= ALAMAT ================= -->
+
+<section id="alamat">
+
+<div class="judul">
+
+<h2>📍 Alamat Sekolah</h2>
+
+<p>
+Lokasi SMK Gusti Wijaya
+</p>
+
+</div>
+
+
+<div class="alamat">
+
+<h3>🏫 SMK Gusti Wijaya</h3>
+
+<p>
+📍 Alamat:
+ISI ALAMAT SEKOLAH
+</p>
+
+<p>
+🏙️ Kota/Kabupaten:
+ISI KOTA
+</p>
+
+<p>
+🌎 Provinsi:
+ISI PROVINSI
+</p>
+
+<a href="#" class="btn">
+🗺️ Lihat Lokasi
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= MODAL FOTO ================= -->
+
+<div class="modal" id="modal">
+
+<span class="close"
+onclick="tutupFoto()">
+×
+</span>
+
+<img id="fotoBesar">
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h3>SMK GUSTI WIJAYA</h3>
+
+<p>X TKJ¹</p>
+
+<p>
+💻 Belajar • Berkarya • Bersama
+</p>
+
+<p>
+© 2026 X TKJ¹
+</p>
+
+</footer>
+
+
+<script>
+
+/* ================= SCROLL MENU ================= */
+
+function scrollKe(id){
+
+    document.getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ================= FOTO FULLSCREEN ================= */
+
+function lihatFoto(src){
+
+    document.getElementById("modal")
+    .style.display="flex";
+
+    document.getElementById("fotoBesar")
+    .src=src;
+
+}
+
+
+function tutupFoto(){
+
+    document.getElementById("modal")
+    .style.display="none";
+
+}
+
+
+/* KLIK AREA GELAP UNTUK MENUTUP */
+
+document.getElementById("modal")
+.addEventListener("click",function(e){
+
+    if(e.target===this){
+
+        tutupFoto();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
